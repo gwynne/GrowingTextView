@@ -68,12 +68,21 @@
 @property int maxNumberOfLines;
 @property int minNumberOfLines;
 @property BOOL animateHeightChange;
+<<<<<<< HEAD
 @property (strong) UITextView *internalTextView;	
 
 
 //uitextview properties
 @property(assign) NSObject<HPGrowingTextViewDelegate> *delegate;
 @property(nonatomic,assign) NSString *text;
+=======
+@property (nonatomic, strong) UITextView *internalTextView;	
+
+
+//uitextview properties
+@property(unsafe_unretained) NSObject<HPGrowingTextViewDelegate> *delegate;
+@property(nonatomic,strong) NSString *text;
+>>>>>>> 43a7f97cfadf20fc427715a3a8e18da443c4d534
 @property(nonatomic,strong) UIFont *font;
 @property(nonatomic,strong) UIColor *textColor;
 @property(nonatomic) UITextAlignment textAlignment;    // default is UITextAlignmentLeft
@@ -82,11 +91,13 @@
 @property(nonatomic) UIDataDetectorTypes dataDetectorTypes __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_3_0);
 @property (nonatomic) UIReturnKeyType returnKeyType;
 @property (assign) UIEdgeInsets contentInset;
+@property(nonatomic) BOOL enablesReturnKeyAutomatically;
 
 //uitextview methods
 //need others? use .internalTextView
 - (BOOL)becomeFirstResponder;
 - (BOOL)resignFirstResponder;
+- (BOOL)isFirstResponder;
 
 - (BOOL)hasText;
 - (void)scrollRangeToVisible:(NSRange)range;
